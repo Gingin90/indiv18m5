@@ -28,12 +28,16 @@ import com.example.indiv18m5.databinding.ActivityMainBinding
         binding.btMostrar.setOnClickListener {
             mostrarDatos()
         }
+        binding.btBorrar.setOnClickListener {
+            borrarDatos()
+        }
+
 
     }
- private fun guardarDatos(texto:String,entero:Int,decimal:Double,boleano:Boolean){
+ private fun guardarDatos(texto:String,entero:Int,decimal:Float,boleano:Boolean){
   msharedPreferences.edit().putString("mi texto",texto).apply()
   msharedPreferences.edit().putInt("mi Entero",entero).apply()
-  msharedPreferences.edit().putFloat("mi Decimal",decimal).apply()
+  msharedPreferences.edit().putFloat("mi Decimal", decimal ).apply()
   msharedPreferences.edit().putBoolean("mi Boleano",boleano).apply()
 
 
@@ -43,7 +47,7 @@ import com.example.indiv18m5.databinding.ActivityMainBinding
      private fun mostrarDatos() {
          val texto = msharedPreferences.getString( "mi Boleano","")
          val entero = msharedPreferences.getInt( "mi Entero",0)
-         val decimal = msharedPreferences.getBoolean( "mi Decimal",0.0)
+         val decimal = msharedPreferences.getBoolean( "mi Decimal",0.0f)
          val boleano =  msharedPreferences.getBoolean( "mi Boleano",false)
 
          binding.tvTexto.text=texto
