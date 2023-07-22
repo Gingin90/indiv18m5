@@ -47,7 +47,7 @@ import com.example.indiv18m5.databinding.ActivityMainBinding
      private fun mostrarDatos() {
          val texto = msharedPreferences.getString( "mi Boleano","")
          val entero = msharedPreferences.getInt( "mi Entero",0)
-         val decimal = msharedPreferences.getBoolean( "mi Decimal",0.0f)
+         val decimal = msharedPreferences.getFloat( "mi Decimal",0.0f)
          val boleano =  msharedPreferences.getBoolean( "mi Boleano",false)
 
          binding.tvTexto.text=texto
